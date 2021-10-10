@@ -10,7 +10,7 @@ const Body = styled.section`
 	margin-top: ${convertPixelToRem(40)};
 
 	row-gap: ${convertPixelToRem(50)};
-	@media all and (max-width: 1000px) {
+	@media all and (max-width: 1100px) {
 		flex-wrap: wrap;
 	}
 `;

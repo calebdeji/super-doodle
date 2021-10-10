@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { ReactComponent as MenuIcon } from 'src/assets/icons/menu.svg';
+
 import Bubble from 'src/components/Bubble';
 import Text from 'src/components/Text';
 import Button from 'src/components/Button';
@@ -14,6 +17,12 @@ const links: Array<Link> = [
 ];
 
 const Nav = () => {
+	const [isMobileNavVisible, setisMobileNavVisible] = useState(false);
+
+	const toggleNavVisibility = () => {
+		setisMobileNavVisible((val) => !val);
+	};
+
 	return (
 		<NavStyles.Body>
 			<NavStyles.LogoLinks>
@@ -27,7 +36,7 @@ const Nav = () => {
 						Studio
 					</Text>
 				</NavStyles.Logo>
-				<NavStyles.LinksContainer>
+				<NavStyles.LinksContainer className="hide-mobile">
 					{links.map((link) => {
 						return (
 							// @ts-ignore
@@ -38,9 +47,26 @@ const Nav = () => {
 					})}
 				</NavStyles.LinksContainer>
 			</NavStyles.LogoLinks>
-			<Button color="#000000" bgColor="#ffffff">
+			<Button color="#000000" bgColor="#ffffff" className="hide-mobile">
 				Contact Us
 			</Button>
+			<NavStyles.MobileNavButton onClick={toggleNavVisibility}>
+				<MenuIcon />
+			</NavStyles.MobileNavButton>
+			{isMobileNavVisible ? (
+				<NavStyles.MobileNav>
+					{[...links, { text: 'Contact', to: '' }].map((link) => {
+						return (
+							// @ts-ignore
+							<Text as="a" fontSize={17} href={link.to}>
+								{link.text}
+							</Text>
+						);
+					})}
+				</NavStyles.MobileNav>
+			) : (
+				''
+			)}
 		</NavStyles.Body>
 	);
 };

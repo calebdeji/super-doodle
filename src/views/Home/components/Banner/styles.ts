@@ -18,6 +18,8 @@ const Body = styled.section`
 	justify-content: space-between;
 	align-items: center;
 	padding: ${convertPixelToRem(30)} ${convertPixelToRem(50)};
+	flex-wrap: wrap;
+	row-gap: ${convertPixelToRem(100)};
 
 	/* column-gap: ${convertPixelToRem(300)}; */
 `;
@@ -26,6 +28,11 @@ const TextRep = styled.div`
 	display: grid;
 	row-gap: ${convertPixelToRem(20)};
 	flex: 1;
+
+	@media all and (max-width: 1000px) {
+		flex: unset;
+		width: 70%;
+	}
 `;
 
 const ImageRep = styled.div`
@@ -64,6 +71,28 @@ const ImageRep = styled.div`
 		height: 100px;
 		border-radius: 100%;
 		background-color: #bf7111;
+	}
+
+	@media all and (max-width: 1000px) {
+		flex: unset;
+		width: 100%;
+		justify-content: flex-start;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		&::before {
+			position: absolute;
+			display: none;
+			content: '';
+		}
+		&::after {
+			position: absolute;
+			display: none;
+			content: '';
+		}
 	}
 `;
 

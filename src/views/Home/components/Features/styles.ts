@@ -8,6 +8,9 @@ const Body = styled.section`
 	justify-content: space-between;
 	padding: ${convertPixelToRem(50)} ${convertPixelToRem(50)};
 	margin-top: ${convertPixelToRem(40)};
+
+	flex-wrap: wrap;
+	row-gap: ${convertPixelToRem(50)};
 `;
 
 const Card = styled.div`
@@ -18,11 +21,18 @@ const Card = styled.div`
 	border-radius: 17px;
 	background: #ffffff;
 	box-shadow: -9px 9px 24px #ededed, 9px -9px 24px #ffffff;
+	max-width: ${convertPixelToRem(400)};
+
+	@media all and (max-width: 400px) {
+		padding: ${convertPixelToRem(30)};
+		width: 100%;
+	}
 `;
 
 const Plain = styled.div`
 	display: grid;
 	row-gap: ${convertPixelToRem(30)};
+	max-width: ${convertPixelToRem(500)};
 `;
 
 const FeatureStyles = { Body, Card, Plain };

@@ -40,7 +40,7 @@ code {
 }
 
 @media all and (max-width: 1100px) {
-	main {
+	/* main {
 		display: none;
 	}
 
@@ -56,5 +56,5 @@ code {
 		height: 100%;
 		position: absolute;
 		left: 40%;
-	}
+	} */
 }

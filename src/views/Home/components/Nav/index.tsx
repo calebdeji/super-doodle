@@ -40,7 +40,7 @@ const Nav = () => {
 					{links.map((link) => {
 						return (
 							// @ts-ignore
-							<Text as="a" fontSize={17} href={link.to}>
+							<Text as="a" fontSize={17} href={link.to} key={link.text.toLocaleLowerCase()}>
 								{link.text}
 							</Text>
 						);
@@ -58,7 +58,7 @@ const Nav = () => {
 					{[...links, { text: 'Contact', to: '' }].map((link) => {
 						return (
 							// @ts-ignore
-							<Text as="a" fontSize={17} href={link.to}>
+							<Text as="a" fontSize={17} href={link.to} key={link.text.toLocaleUpperCase()}>
 								{link.text}
 							</Text>
 						);

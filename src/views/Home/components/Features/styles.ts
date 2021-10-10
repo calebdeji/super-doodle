@@ -9,8 +9,10 @@ const Body = styled.section`
 	padding: ${convertPixelToRem(50)} ${convertPixelToRem(50)};
 	margin-top: ${convertPixelToRem(40)};
 
-	flex-wrap: wrap;
 	row-gap: ${convertPixelToRem(50)};
+	@media all and (max-width: 1000px) {
+		flex-wrap: wrap;
+	}
 `;
 
 const Card = styled.div`

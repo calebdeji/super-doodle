@@ -82,9 +82,10 @@ const navanimate = keyframes`
 `;
 
 const MobileNav = styled.nav`
-	border-radius: 20px;
-	background: #faf9f9;
-	/* box-shadow: -9px 9px 7px #e9e8e8, 9px -9px 7px #ffffff; */
+	border-radius: 22px;
+	background: linear-gradient(225deg, #ffffff, #e1e0e0);
+	box-shadow: -9px 9px 12px #dcdbdb, 9px -9px 12px #ffffff;
+
 	display: grid;
 	row-gap: ${convertPixelToRem(20)};
 	animation: ${navanimate} 700ms ease-in-out;

@@ -38,3 +38,23 @@ button:hover {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@media all and (max-width: 1100px) {
+	main {
+		display: none;
+	}
+
+	#root {
+		min-height: 100vh;
+	}
+
+	#root::after {
+		display: flex;
+		justify-self: center;
+		align-items: center;
+		content: 'Kindly view on a larger screen';
+		height: 100%;
+		position: absolute;
+		left: 40%;
+	}
+}

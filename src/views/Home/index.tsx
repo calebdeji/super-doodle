@@ -4,11 +4,11 @@ import Nav from './components/Nav';
 
 const Home = () => {
 	return (
-		<>
+		<main>
 			<Nav />
 			<Banner />
 			<Features />
-		</>
+		</main>
 	);
 };
 
